@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -18,9 +18,9 @@ app.get('/hello', (req, res) => {
 // ────────────────────────────────────────────────
 // GET /greet/:name  → recibe un nombre y lo retorna
 // ────────────────────────────────────────────────
-app.get('/greet/:name', (req, res) => {
+app.get('/name/:name', (req, res) => {
   const { name } = req.params;
-
+  gi
   if (!name || name.trim() === '') {
     return res.status(400).json({ error: 'El parámetro "name" es requerido' });
   }
